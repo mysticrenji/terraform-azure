@@ -5,6 +5,8 @@
 <h3>
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash </br>
 
+Run the below snippet in powershell core
+
 az account list --query [*].[name,id] </br>
 
 $subscriptionId = 'xxxx-xxxxx-xxxxx' </br>
