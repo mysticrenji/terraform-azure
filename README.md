@@ -1,16 +1,13 @@
-# terraform-azure
-Terraform with Azure Cloud
+# Terraform with Azure Cloud
 
 <h1>Instructions to install prerequisites for Terraform Azure Providers<h1>
 
-<h4>Install<h4>
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash </br>
 
 az account list --query [*].[name,id] </br>
 
 $subscriptionId = 'xxxx-xxxxx-xxxxx' </br>
 
-$subscriptionId ='xxxx'</br>
 $sp = az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/$subscriptionId" -n TerraformTesting | ConvertFrom-Json </br>
 
 $env:ARM_SUBSCRIPTION_ID = $subscriptionId </br>
