@@ -2,6 +2,7 @@
 
 <h1>Instructions to install prerequisites for Terraform Azure Providers<h1>
 
+<h3>
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash </br>
 
 az account list --query [*].[name,id] </br>
@@ -14,3 +15,4 @@ $env:ARM_SUBSCRIPTION_ID = $subscriptionId </br>
 $env:ARM_CLIENT_ID = $sp.appId </br>
 $env:ARM_CLIENT_SECRET = $sp.password </br>
 $env:ARM_TENANT_ID = $sp.tenant </br>
+</h3>
