@@ -18,3 +18,4 @@ $env:ARM_CLIENT_ID = $sp.appId </br>
 $env:ARM_CLIENT_SECRET = $sp.password </br>
 $env:ARM_TENANT_ID = $sp.tenant </br>
 </h3>
+
