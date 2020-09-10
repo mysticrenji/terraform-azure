@@ -3,15 +3,15 @@ name: 'Terraform'
 on:
   push:
     branches:
-    - master
+    - master/Azure-Devops
   pull_request:
 
 jobs:
   terraform:
     name: 'Terraform'
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./Azure-Devops
+    #env:
+     # working-directory: ./Azure-Devops
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -23,12 +23,12 @@ jobs:
 
     - name: Terraform Init
       run: terraform init
-      working-directory: ${{env.working-directory}}
+      #working-directory: ${{env.working-directory}}
 
     - name: Terraform Format
       run: terraform fmt -check
-      working-directory: ${{env.working-directory}}
+      #working-directory: ${{env.working-directory}}
 
     - name: Terraform Plan
       run: terraform plan
-      working-directory: ${{env.working-directory}}
+      #working-directory: ${{env.working-directory}}
