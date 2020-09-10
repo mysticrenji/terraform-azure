@@ -37,7 +37,7 @@ resource "azurerm_virtual_network" "myterraformnetwork" {
     resource_group_name = azurerm_resource_group.myterraformgroup.name
 
     tags = {
-        environment = "Terraform-LinuxVM"
+        environment = "Terraform-GitHubActions"
     }
 }
 
@@ -55,7 +55,7 @@ resource "azurerm_public_ip" "myterraformpublicip" {
     allocation_method            = "Dynamic"
 
     tags = {
-        environment = "Terraform-LinuxVM"
+        environment = "Terraform-GitHubActions"
     }
 }
 
@@ -77,7 +77,7 @@ resource "azurerm_network_security_group" "myterraformnsg" {
     }
 
     tags = {
-        environment = "Terraform-LinuxVM"
+        environment = "Terraform-GitHubActions"
     }
 }
 
@@ -94,7 +94,7 @@ resource "azurerm_network_interface" "myterraformnic" {
     }
 
     tags = {
-        environment = "Terraform-LinuxVM"
+        environment = "Terraform-GitHubActions"
     }
 }
 
@@ -121,7 +121,7 @@ resource "azurerm_network_interface_security_group_association" "example" {
 #     account_tier                = "Standard"
 
 #     tags = {
-#         environment = "Terraform-LinuxVM"
+#         environment = "Terraform-GitHubActions"
 #     }
 # }
 
@@ -152,7 +152,7 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
         version   = "latest"
     }
 
-    computer_name  = "Terraform-LinuxVM"
+    computer_name  = "Terraform-GitHubActions"
     admin_username = "azureuser"
     disable_password_authentication = true
         
@@ -167,7 +167,7 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
     #}
 
     tags = {
-        environment = "Terraform-LinuxVM"
+        environment = "Terraform-GitHubActions"
     }
 }
 
