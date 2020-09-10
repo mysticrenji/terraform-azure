@@ -22,11 +22,11 @@ resource "null_resource" "terraform-github-actions" {
 
 ## <https://www.terraform.io/docs/providers/azurerm/r/resource_group.html>
 resource "azurerm_resource_group" "myterraformgroup" {
-  name     = "Terraform-LinuxVM"
+  name     = "Terraform-GitHubActions"
   location = "eastus"
 
   tags = {
-      environment = "Terraform-LinuxVM"
+      environment = "Terraform-GitHubActions"
   }
 }
 
