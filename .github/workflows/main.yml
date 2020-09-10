@@ -25,15 +25,15 @@ jobs:
       run: terraform init
       working-directory: ${{env.working-directory}}
 
-   # - name: Terraform Format
-   #   run: terraform fmt -check
+    - name: Terraform Format
+      run: terraform fmt -check
+      working-directory: ${{env.working-directory}}
+
+   # - name: Terraform Plan
+   #   run: terraform plan
    #   working-directory: ${{env.working-directory}}
 
-    - name: Terraform Plan
-      run: terraform plan
-      working-directory: ${{env.working-directory}}
-
-    - name: Terraform Apply
-      if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-      run: terraform apply -auto-approve
-      working-directory: ${{env.working-directory}}
+   # - name: Terraform Apply
+   #   if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+   #   run: terraform apply -auto-approve
+   #   working-directory: ${{env.working-directory}}
