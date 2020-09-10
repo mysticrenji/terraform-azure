@@ -7,7 +7,7 @@ terraform {
    organization = "mysticrenji"
 
    workspaces {
-     name = "terraform-azure"
+     name = "terraform-azuredevops"
    }
  }
 }
