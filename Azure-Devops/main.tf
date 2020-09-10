@@ -2,6 +2,16 @@ provider "azuredevops" {
   version = ">= 0.0.1"
 }
 
+terraform {
+ backend "remote" {
+   organization = "mysticrenji"
+
+   workspaces {
+     name = "terraform-azure"
+   }
+ }
+}
+
 resource "azuredevops_project" "project" {
   project_name = "Terraforming-AzDevOps"
   description  = "Terraformed using GitHub Actions"
