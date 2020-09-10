@@ -1,0 +1,34 @@
+name: 'Terraform-AzureDevops'
+
+on:
+  push:
+    branches:
+    - master/Azure-Devops
+  pull_request:
+
+jobs:
+  terraform:
+    name: 'Terraform'
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./VM-Terrform
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v1
+      with:
+        cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+
+    - name: Terraform Init
+      run: terraform init
+      working-directory: ${{env.working-directory}}
+
+    - name: Terraform Format
+      run: terraform fmt -check
+      working-directory: ${{env.working-directory}}
+
+    - name: Terraform Plan
+      run: terraform plan
+      working-directory: ${{env.working-directory}}
