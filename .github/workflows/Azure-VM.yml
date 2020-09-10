@@ -1,4 +1,4 @@
-name: 'Terraform'
+name: 'Azure-VM'
 
 on:
   push:
