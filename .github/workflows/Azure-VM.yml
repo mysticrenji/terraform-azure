@@ -1,17 +1,17 @@
-name: 'Terraform'
+name: 'Terraform-AzureVM'
 
 on:
   push:
     branches:
-    - master
+    - master/VM-Terrform
   pull_request:
 
 jobs:
   terraform:
     name: 'Terraform'
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./VM-Terrform
+   # env:
+   #   working-directory: ./VM-Terrform
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -23,7 +23,7 @@ jobs:
 
     - name: Terraform Init
       run: terraform init
-      working-directory: ${{env.working-directory}}
+     # working-directory: ${{env.working-directory}}
 
     #- name: Terraform Format
     #  run: terraform fmt -check
@@ -31,7 +31,7 @@ jobs:
 
     - name: Terraform Plan
       run: terraform plan
-      working-directory: ${{env.working-directory}}
+     # working-directory: ${{env.working-directory}}
 
    # - name: Terraform Apply
    #   if: github.ref == 'refs/heads/master' && github.event_name == 'push'

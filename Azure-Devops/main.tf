@@ -2,6 +2,16 @@ provider "azuredevops" {
   version = ">= 0.0.1"
 }
 
+terraform {
+ backend "remote" {
+   organization = "mysticrenji"
+
+   workspaces {
+     name = "terraform-azuredevops"
+   }
+ }
+}
+
 resource "azuredevops_project" "project" {
   project_name = "Terraforming-AzDevOps"
   description  = "Terraformed using GitHub Actions"
@@ -17,7 +27,7 @@ resource "azuredevops_git_repository" "repository" {
 
 resource "azuredevops_build_definition" "build_definition" {
   project_id = azuredevops_project.project.id
-  name       = "My Awesome Build Pipeline"
+  name       = "My Build Pipeline"
   path       = "\\"
 
   repository {
