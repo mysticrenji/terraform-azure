@@ -1,4 +1,3 @@
-## <https://www.terraform.io/docs/providers/azurerm/index.html>
 provider "azurerm" {
     version = "~>2.0"
     features {}
