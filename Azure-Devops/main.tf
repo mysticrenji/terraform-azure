@@ -2,7 +2,6 @@ provider "azuredevops" {
   version = ">= 0.0.1"
 }
 
-
 resource "azuredevops_project" "project" {
   project_name = "Terraforming-AzDevOps"
   description  = "Terraformed using GitHub Actions"
