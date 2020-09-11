@@ -2,15 +2,6 @@ provider "azuredevops" {
   version = ">= 0.0.1"
 }
 
-terraform {
- backend "remote" {
-   organization = "mysticrenji"
-
-   workspaces {
-     name = "terraform-azuredevops"
-   }
- }
-}
 
 resource "azuredevops_project" "project" {
   project_name = "Terraforming-AzDevOps"
