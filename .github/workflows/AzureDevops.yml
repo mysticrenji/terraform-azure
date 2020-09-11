@@ -3,7 +3,7 @@ name: 'Terraform-AzureDevops'
 on:
   push:
     branches:
-    - 'master/Azure-Devops'
+    - Azure-Devops
   pull_request:
 
 jobs:
