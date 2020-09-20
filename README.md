@@ -5,6 +5,7 @@
 <h3>
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash </br>
 
+
 // Get the subscription ID registered </br>
 az login  </br>
 az account list --query [*].[name,id] </br>
