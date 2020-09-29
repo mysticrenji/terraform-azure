@@ -5,20 +5,20 @@ on:
     branches:
     - master
   pull_request:
+    
+defaults:
+  run:
+    working-directory: VM-Teerorm
 
 jobs:
   terraform:
-    name: 'Terraform'
+    name: 'Terrform'
     runs-on: ubuntu-latest
-
-    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
-    defaults:
-      run:
-        shell: bash
 
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+      
     - name: Terraform security scan
       uses: triat/terraform-security-scan@v1
       env:
