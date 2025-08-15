@@ -20,7 +20,7 @@ jobs:
     steps:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v5
 
     # Security Check using tfsec
     - name: Terraform security scan
